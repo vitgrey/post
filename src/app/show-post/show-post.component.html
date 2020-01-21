@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let article of articles">
+      <h3>{{article.title}}</h3>
+      <div class="icon">
+        <i title=" Edit" class="fas fa-edit" aria-hidden="true"></i><br>
+        <i title="Delete" class="fas fa-trash-alt" aria-hidden="true"></i>
+      </div>
+      <p>{{article.content}}</p>
+      <p><a class="btn btn-secondary" href="#" role="button">Details &raquo;</a></p>
+    </div>
+  </div>
+</div>
