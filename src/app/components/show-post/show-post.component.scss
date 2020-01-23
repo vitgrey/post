@@ -1,10 +1,9 @@
 .container {
-  margin-top: 7vh;
+  margin-top: 3vh;
 }
 
 .icon {
   float: right;
-  margin-bottom: 8vh;
 }
 
 .wrapper {
@@ -17,6 +16,7 @@
 .search {
   width: 40vw;
 }
+
 .add button {
   width: 15vw;
 }
@@ -26,20 +26,21 @@ span {
 }
 
 .article {
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 2% 5% 0% 5%;
-  margin: 2%;
-  height: 30vh;
-  width: 25vw;
+  margin: 1%;
+  height: 50vh;
+  width: 26vw;
 }
 
 .title {
-  font-size: 1.5vw;
+  font-size: 1.7vw;
+  font-weight: bold;
 } 
 
-.title {
+.content {
   font-size: 1.2vw;
-} 
+}
 
 .box {
   overflow: hidden;
@@ -59,6 +60,10 @@ span {
   float: right;
   width: 100%;
   margin-left: -5px;
+}
+
+.img {
+  padding-bottom: 2vh;
 }
 
 .box:after {

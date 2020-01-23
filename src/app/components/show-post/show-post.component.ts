@@ -10,20 +10,20 @@ import { Router } from '@angular/router';
 })
 export class ShowPostComponent implements OnInit {
 
-  public articles: ArticlesModel[] = []
+  public articles: ArticlesModel[] = [];
 
   constructor(private articlesService: ArticlesService, private router: Router) { }
 
   ngOnInit() {
-    this.loadAllArticleList()
+    this.loadAllArticleList();
   }
 
   loadAllArticleList() {
-    this.articles = this.articlesService.getAllArticles()
+    this.articles = this.articlesService.getAllArticles();
   }
 
   onClickEditArticleDetail(id) {
-    this.router.navigate(['/change-post'], { queryParams: { id: id } })
+    this.router.navigate(['/change-post'], { queryParams: { id } });
   }
 
   onClickArticleDelete(id) {
@@ -32,7 +32,7 @@ export class ShowPostComponent implements OnInit {
   }
 
   onClickAddArticle() {
-    this.router.navigate(['/change-post'])
+    this.router.navigate(['/change-post']);
   }
 
 }

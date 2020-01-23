@@ -1,18 +1,17 @@
 import { ArticlesModel } from 'src/app/models/article';
-import { Injectable } from '@angular/core'
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class ArticlesService {
 
-  public articles: ArticlesModel[] = []
+  public articles: ArticlesModel[] = [];
   constructor() { }
 
   getAllArticles(): ArticlesModel[] {
     if (localStorage.getItem('localData') !== null) {
-      this.articles = JSON.parse(localStorage.getItem('localData'))
-    }
-    else {
-      let articleArrayData = [
+      this.articles = JSON.parse(localStorage.getItem('localData'));
+    } else {
+      const articleArrayData = [
         {
           id: 1,
           title: 'Great Britain',
@@ -23,46 +22,45 @@ export class ArticlesService {
           title: 'Ukraine',
           content: 'Kyiv is the capital of Ukraine'
         }
-      ]
-      localStorage.setItem('localData', JSON.stringify(articleArrayData))
-      this.articles = JSON.parse(localStorage.getItem('localData'))
+      ];
+      localStorage.setItem('localData', JSON.stringify(articleArrayData));
+      this.articles = JSON.parse(localStorage.getItem('localData'));
     }
-    return this.articles
+    return this.articles;
   }
 
   getArticleById(id: number): ArticlesModel {
-    let articleArray = JSON.parse(localStorage.getItem('localData'))
+    const articleArray = JSON.parse(localStorage.getItem('localData'));
     return articleArray
       .filter(todo => todo.id === id)
-      .pop()
+      .pop();
   }
 
   updateArticleById(article): ArticlesModel {
     if (article.id === 0) {
-      let articleArray = JSON.parse(localStorage.getItem('localData'))
-      let articleId = articleArray.length
-      article.id = ++articleId
-      articleArray.push(article)
-      localStorage.setItem('localData', JSON.stringify(articleArray))
-    }
-    else {
-      let articleSaveArray = JSON.parse(localStorage.getItem('localData'))
-      for (let i in articleSaveArray) {
+      const articleArray = JSON.parse(localStorage.getItem('localData'));
+      let articleId = articleArray.length;
+      article.id = ++articleId;
+      articleArray.push(article);
+      localStorage.setItem('localData', JSON.stringify(articleArray));
+    } else {
+      const articleSaveArray = JSON.parse(localStorage.getItem('localData'));
+      for (const i in articleSaveArray) {
         if (articleSaveArray[i].id === article.id) {
-          articleSaveArray[i] = article
-          localStorage.setItem('localData', JSON.stringify(articleSaveArray))
+          articleSaveArray[i] = article;
+          localStorage.setItem('localData', JSON.stringify(articleSaveArray));
         }
       }
     }
-    return article
+    return article;
   }
 
   deleteArticleDetail(id) {
-    let articleArray = JSON.parse(localStorage.getItem('localData'))
-    for (let i in articleArray) {
+    const articleArray = JSON.parse(localStorage.getItem('localData'));
+    for (const i in articleArray) {
       if (articleArray[i].id === id) {
-        articleArray.splice(i, 1)
-        localStorage.setItem('localData', JSON.stringify(articleArray))
+        articleArray.splice(i, 1);
+        localStorage.setItem('localData', JSON.stringify(articleArray));
       }
     }
   }

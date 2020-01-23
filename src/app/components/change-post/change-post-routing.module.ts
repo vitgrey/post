@@ -1,12 +1,12 @@
-import { NgModule } from "@angular/core"
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ChangePostComponent } from './change-post.component'
+import { ChangePostComponent } from './change-post.component';
 
 const routes: Routes = [
   {
     path: '', component: ChangePostComponent
   }
-]
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

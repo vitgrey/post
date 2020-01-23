@@ -11,37 +11,36 @@ import { ArticlesModel } from 'src/app/models/article';
 export class ChangePostComponent implements OnInit {
 
   public articleId: string;
-  public articleDetail = <ArticlesModel>{}
+  public articleDetail = {} as ArticlesModel;
   public mode: string;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router, private articlesServise: ArticlesService) { }
 
   ngOnInit() {
     this.activatedRoute.queryParams.subscribe((params: Params) => {
-      this.articleId = params['id']
+      this.articleId = params.id;
       if (this.articleId !== undefined) {
-        this.getArticleDetailById(this.articleId)
-        this.mode = 'Edit'
+        this.getArticleDetailById(this.articleId);
+        this.mode = 'Edit';
+      } else {
+        this.articleDetail.id = 0;
+        this.mode = 'Add';
       }
-      else {
-        this.articleDetail['id'] = 0;
-        this.mode = 'Add'
-      }
-    })
+    });
   }
 
   getArticleDetailById(id) {
-    this.articleDetail = this.articlesServise.getArticleById(parseInt(id))
+    this.articleDetail = this.articlesServise.getArticleById(parseInt(id));
   }
 
   onArticleSubmitForm(form) {
     if (form.valid) {
-      this.articlesServise.updateArticleById(this.articleDetail)
-      this.router.navigate(['/show-post'])
+      this.articlesServise.updateArticleById(this.articleDetail);
+      this.router.navigate(['/show-post']);
     }
   }
 
   onClickCancel() {
-    this.router.navigate(['/show-post'])
+    this.router.navigate(['/show-post']);
   }
 }
