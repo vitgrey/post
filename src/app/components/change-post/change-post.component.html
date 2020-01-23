@@ -8,7 +8,7 @@
           <label for="title" class="col-md-2 col-form-label">Title</label>
           <div class="col-md-5">
             <input type="text" class="form-control" #title="ngModel" name="title" [(ngModel)]="articleDetail.title"
-              placeholder="First Name" required>
+              placeholder="Title" required>
             <div [hidden]="title.valid || (title.pristine && !articleForm.submitted)" class="text-danger">
               title is required.
             </div>
@@ -19,7 +19,7 @@
           <label for="content" class="col-md-2 col-form-label">Content</label>
           <div class="col-md-5">
             <input type="text" class="form-control" #content="ngModel" name="content"
-              [(ngModel)]="articleDetail.content" placeholder="Middel Name" required>
+              [(ngModel)]="articleDetail.content" placeholder="Content" required>
             <div [hidden]="content.valid || (content.pristine && !articleForm.submitted)" class="text-danger">
               Content is required.
             </div>

@@ -3,14 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DeletePostComponent } from './components/delete-post/delete-post.component';
-
-
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DeletePostComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

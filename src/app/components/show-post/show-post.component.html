@@ -1,3 +1,5 @@
+<!-- Add button & search-->
+
 <div class="wrapper container">
   <div class="search">
     <input class="form-control" type="text" placeholder="Search" aria-label="Search">
@@ -7,22 +9,46 @@
       (click)="onClickAddArticle()">Add</button>
   </div>
 </div>
+
+<!--Article list-->
+
 <div class="container">
   <div class="row">
     <div class="col-md-4" *ngFor="let article of articles">
-      <p>{{article.id}}</p><br>
-      <h3>{{article.title}}</h3>
+      <span>id: {{article.id}}</span><br>
 
       <div class="icon">
         <i title=" Edit" class="fas fa-edit" aria-hidden="true" data-toggle="modal" data-target="#exampleModalChange"
           (click)="onClickEditArticleDetail(article.id)"></i><br>
         <i title="Delete" class="fas fa-trash-alt" aria-hidden="true" data-toggle="modal"
-          data-target="#exampleModalDelete"></i>
+           (click)="onClickArticleDelete(article.id)"></i>
       </div>
-
+      <h4>{{article.title}}</h4>
       <p>{{article.content}}</p>
 
-      <p><a class="btn btn-primary" href="#" role="button">Details</a></p>
+      <!--Delete modal-->
+
+      <div class="modal fade" id="exampleModalDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Are you shure?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" (click)="onClickArticleDelete(article.id)">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>

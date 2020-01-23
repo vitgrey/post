@@ -14,7 +14,7 @@ const routes: Routes = [
   {
     path: 'change-post',
     loadChildren: () => import('./components/change-post/change-post.module').then(mod => mod.ArticleChangeModule)
-  },
+  }
 
 ];
 

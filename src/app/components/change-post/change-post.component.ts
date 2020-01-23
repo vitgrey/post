@@ -37,11 +37,11 @@ export class ChangePostComponent implements OnInit {
   onArticleSubmitForm(form) {
     if (form.valid) {
       this.articlesServise.updateArticleById(this.articleDetail)
-      this.router.navigate['/show-post']
+      this.router.navigate(['/show-post'])
     }
   }
 
   onClickCancel() {
-    this.router.navigate['/show-post']
+    this.router.navigate(['/show-post'])
   }
 }
