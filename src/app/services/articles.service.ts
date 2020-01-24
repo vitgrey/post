@@ -10,21 +10,6 @@ export class ArticlesService {
   getAllArticles(): ArticlesModel[] {
     if (localStorage.getItem('localData') !== null) {
       this.articles = JSON.parse(localStorage.getItem('localData'));
-    } else {
-      const articleArrayData = [
-        {
-          id: 1,
-          title: 'Great Britain',
-          content: 'London is the capital of Great Britain'
-        },
-        {
-          id: 2,
-          title: 'Ukraine',
-          content: 'Kyiv is the capital of Ukraine'
-        }
-      ];
-      localStorage.setItem('localData', JSON.stringify(articleArrayData));
-      this.articles = JSON.parse(localStorage.getItem('localData'));
     }
     return this.articles;
   }
