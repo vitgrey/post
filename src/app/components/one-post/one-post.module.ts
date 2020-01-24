@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ShowPostRoutingModule } from './show-post-routing.module';
-import { ShowPostComponent } from './show-post.component';
+
+import { OnePostRoutingModule } from './one-post-routing.module';
+import { OnePostComponent } from './one-post.component';
 import { ArticlesService } from 'src/app/services/articles.service';
 
 @NgModule({
   imports: [
     CommonModule,
-    ShowPostRoutingModule,
-    FormsModule
+    FormsModule,
+    OnePostRoutingModule
   ],
-  declarations: [ShowPostComponent],
+  declarations: [OnePostComponent],
   providers: [ArticlesService]
 })
 
-export class ArticleShowModule { }
+export class ArticleChangeModule { }

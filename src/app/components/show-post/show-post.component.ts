@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticlesModel } from 'src/app/models/article';
 import { ArticlesService } from 'src/app/services/articles.service';
+
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,6 +12,8 @@ import { Router } from '@angular/router';
 export class ShowPostComponent implements OnInit {
 
   public articles: ArticlesModel[] = [];
+  public articleId: string;
+  public articleDetail = {} as ArticlesModel;
 
   constructor(private articlesService: ArticlesService, private router: Router) { }
 
@@ -33,6 +36,15 @@ export class ShowPostComponent implements OnInit {
 
   onClickAddArticle() {
     this.router.navigate(['/change-post']);
+  }
+
+  getArticleDetailById(id) {
+    this.articleDetail = this.articlesService.getArticleById(parseInt(id));
+  }
+
+  onClickReadArticle(id) {
+    this.articleId = id;
+    this.getArticleDetailById(this.articleId);
   }
 
 }

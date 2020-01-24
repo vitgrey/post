@@ -30,7 +30,7 @@ export class ChangePostComponent implements OnInit {
   }
 
   getArticleDetailById(id) {
-    this.articleDetail = this.articlesServise.getArticleById(parseInt(id, 2));
+    this.articleDetail = this.articlesServise.getArticleById(parseInt(id));
   }
 
   onArticleSubmitForm(form) {

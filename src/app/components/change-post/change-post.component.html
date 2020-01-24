@@ -32,9 +32,6 @@
             <div class="col-md-7">
               <input type="file" class="form-control" #source="ngModel" name="source" [(ngModel)]="articleDetail.source"
                 multiple accept="image/*,image/jpeg" required>
-              <div [hidden]="source.valid || (source.pristine && !articleForm.submitted)" class="text-danger">
-                source is required.
-              </div>
             </div>
           </div>
 
