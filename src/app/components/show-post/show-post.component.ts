@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class ShowPostComponent implements OnInit {
 
+  public search: any = '';
   public articles: ArticlesModel[] = [];
   public articleId: string;
   public articleDetail = {} as ArticlesModel;
@@ -39,7 +40,7 @@ export class ShowPostComponent implements OnInit {
   }
 
   getArticleDetailById(id) {
-    this.articleDetail = this.articlesService.getArticleById(parseInt(id));
+    this.articleDetail = this.articlesService.getArticleById(parseInt(id, 10));
   }
 
   onClickReadArticle(id) {

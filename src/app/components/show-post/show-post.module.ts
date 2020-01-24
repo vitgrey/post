@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ShowPostRoutingModule } from './show-post-routing.module';
 import { ShowPostComponent } from './show-post.component';
 import { ArticlesService } from 'src/app/services/articles.service';
+import { SearchPipe } from './../../pipes/search.pipe';
 
 @NgModule({
   imports: [
@@ -11,7 +12,10 @@ import { ArticlesService } from 'src/app/services/articles.service';
     ShowPostRoutingModule,
     FormsModule
   ],
-  declarations: [ShowPostComponent],
+  declarations: [
+    ShowPostComponent,
+    SearchPipe
+  ],
   providers: [ArticlesService]
 })
 

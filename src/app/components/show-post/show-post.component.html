@@ -2,7 +2,7 @@
 
 <div class="wrapper container">
   <div class="search">
-    <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+    <input class="form-control" type="text" placeholder="Search" aria-label="Search" [(ngModel)]="query">
   </div>
   <div class="add">
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
@@ -14,7 +14,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-4" *ngFor="let article of articles">
+    <div class="col-md-4" *ngFor="let article of articles | search : query">
       <div class="bg-light article">
         <span>id: {{article.id}}</span><br>
 
