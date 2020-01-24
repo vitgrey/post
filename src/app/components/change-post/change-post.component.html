@@ -1,10 +1,10 @@
 <div class="container">
   <div class="col-sm-12 pt-5">
-    <div class="col-md-12">
+    <div class="col-md-6 bg-white">
       <form id="articleForm" #articleForm="ngForm" (ngSubmit)="onArticleSubmitForm(articleForm)" novalidat>
         <fieldset class="scheduler-border">
           <legend class="scheduler-border">{{mode}} article</legend>
-  
+
           <div class="form-group row">
             <label for="title" class="col-md-2 col-form-label">Title</label>
             <div class="col-md-5">
@@ -15,7 +15,7 @@
               </div>
             </div>
           </div>
-          
+
           <div class="form-group row">
             <label for="content" class="col-md-2 col-form-label">Content</label>
             <div class="col-md-5">
@@ -26,7 +26,18 @@
               </div>
             </div>
           </div>
-  
+
+          <div class="form-group row">
+            <label for="source" class="col-md-2 col-form-label">Upload</label>
+            <div class="col-md-7">
+              <input type="file" class="form-control" #source="ngModel" name="source" [(ngModel)]="articleDetail.source"
+                multiple accept="image/*,image/jpeg" required>
+              <div [hidden]="source.valid || (source.pristine && !articleForm.submitted)" class="text-danger">
+                source is required.
+              </div>
+            </div>
+          </div>
+
           <div class="form-group row">
             <div class="col-md-7 text-right">
               <button type="submit" class="btn btn-primary mr-2">Save</button>

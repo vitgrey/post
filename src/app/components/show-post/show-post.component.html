@@ -19,14 +19,14 @@
         <span>id: {{article.id}}</span><br>
 
         <a class="img">
-          <img src="../../../assets/download.jpeg" alt="picture">
+          <img src="../../../assets/{{article.source.substring(12,32)}}" alt="picture">
         </a>
 
         <div class="icon">
           <i title=" Edit" class="fas fa-edit" aria-hidden="true" data-toggle="modal" data-target="#exampleModalChange"
             (click)="onClickEditArticleDetail(article.id)"></i><br>
           <i title="Delete" class="fas fa-trash-alt" aria-hidden="true" data-toggle="modal"
-             (click)="onClickArticleDelete(article.id)"></i>
+            (click)="onClickArticleDelete(article.id)"></i>
         </div>
         <p class="title">{{article.title}}</p>
         <div class="box">
@@ -35,7 +35,7 @@
           </div>
         </div>
 
-        
+
       </div>
 
       <!--Delete modal-->
