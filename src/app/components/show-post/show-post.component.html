@@ -14,13 +14,9 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-4" *ngFor="let article of articles | search : query">
-      <div class="bg-light article">
+    <div class="col-md-12" *ngFor="let article of articles | search : query">
+      <div class="background article">
         <span>id: {{article.id}}</span><br>
-
-        <a class="img">
-          <img src="../../../assets/{{article.source.substring(12,32)}}" alt="picture">
-        </a>
 
         <div class="icon">
           <i title=" Edit" class="fas fa-edit" aria-hidden="true" data-toggle="modal" data-target="#exampleModalChange"
@@ -28,15 +24,22 @@
           <i title="Delete" class="fas fa-trash-alt" aria-hidden="true" data-toggle="modal"
             (click)="onClickArticleDelete(article.id)"></i>
         </div>
+
+        <a class="img">
+          <img src="../../../assets/{{article.source.substring(12,32)}}" alt="picture">
+        </a>
+
+
         <p class="title">{{article.title}}</p>
         <div class="box">
           <div>
             <p class="content">{{article.content}}</p>
           </div>
         </div>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ReadModal"
+
+        <button type="button" class="button btn btn-secondary" data-toggle="modal" data-target="#ReadModal"
           (click)="onClickReadArticle(article.id)">
-          Read more
+          Read more...
         </button>
 
       </div>
