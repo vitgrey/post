@@ -15,6 +15,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12" *ngFor="let article of articles | search : query">
+
       <div class="background article">
         <span>id: {{article.id}}</span><br>
 
@@ -29,7 +30,6 @@
           <img src="../../../assets/{{article.source.substring(12,32)}}" alt="picture">
         </a>
 
-
         <p class="title">{{article.title}}</p>
         <div class="box">
           <div>
@@ -41,7 +41,6 @@
           (click)="onClickReadArticle(article.id)">
           Read more...
         </button>
-
       </div>
 
       <!-- Modal -->
@@ -68,6 +67,9 @@
         </div>
       </div>
 
+    </div>
+    <div class="pagination card-footer pb-0 pt-3">
+      <jw-pagination [items]="items" (changePage)="onChangePage($event)"></jw-pagination>
     </div>
   </div>
 </div>

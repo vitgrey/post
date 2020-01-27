@@ -5,6 +5,7 @@ import { ShowPostRoutingModule } from './show-post-routing.module';
 import { ShowPostComponent } from './show-post.component';
 import { ArticlesService } from 'src/app/services/articles.service';
 import { SearchPipe } from './../../pipes/search.pipe';
+import { JwPaginationComponent } from 'jw-angular-pagination';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { SearchPipe } from './../../pipes/search.pipe';
   ],
   declarations: [
     ShowPostComponent,
-    SearchPipe
+    SearchPipe,
+    JwPaginationComponent
   ],
   providers: [ArticlesService]
 })

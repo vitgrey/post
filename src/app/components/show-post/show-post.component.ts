@@ -15,11 +15,17 @@ export class ShowPostComponent implements OnInit {
   public articles: ArticlesModel[] = [];
   public articleId: string;
   public articleDetail = {} as ArticlesModel;
+  public items = [];
 
   constructor(private articlesService: ArticlesService, private router: Router) { }
 
   ngOnInit() {
+    this.items = this.articlesService.getAllArticles();
     this.loadAllArticleList();
+  }
+
+  onChangePage(articles) {
+    this.articles = articles;
   }
 
   loadAllArticleList() {
